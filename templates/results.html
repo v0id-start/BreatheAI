@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Rendered after image is submitted to NN and displays outputs -->
+    <div class="container">
+        <h1 class="text-center display-3">Diagnosis:</h1>
+        <br>
+        <hr>
+
+
+        <br>
+
+        <!-- Display diagnosis string based on neural network prediction -->
+        {% if has_cap == true %}
+            <h1 style="color:red" class="text-center text-underline">{{ diagnoses }}</h1>
+        {% else %}
+            <h1 style="color:lime" class="text-center">{{ diagnoses }}</h1>
+        {% endif %}
+
+
+        <img src="{{ img_path }}" class="rounded mx-auto d-block" style="width:600px;height:600px;" alt="Uploaded CXR">
+
+        <br>
+        <br>
+
+
+    </div>
+
+        <a class="btn btn-primary col text-center" href="/diagnose">Diagnose Another CXR</a>
+
+        <br>
+        <br>
+        <br>
+{% endblock content %}

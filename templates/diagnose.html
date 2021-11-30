@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Unique styling for diagnosis page -->
+<!-- Page with upload functionality for images of x-rays to feed to Neural Network -->
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3098ff;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 130px;
+
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+</html>
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-3">
+
+
+        <h1 class="text-center">Upload CXR Image Here</h1>
+    <br>
+    <br>
+
+        <!-- Directions -->
+    <li class="list-group-item">
+    <h1 class="text-center display-5"><u>Directions:</u></h1>
+    <br>
+
+    <ol>
+
+        <li>Click 'Choose File' and select a jpeg image of a chest x-ray (2 MB MAX)</li>
+        <br>
+        <li>Click 'Upload' once the name of the selected file appears</li>
+        <br>
+        <li>The Neural Network will provide a predictive diagnoses and confidence rating percentage of the diagnoses</li>
+    </ol>
+    </li>
+    <br>
+    <br>
+
+    <!-- Form to upload and point to local directory with user's x-ray image, feeds image to NN to diagnose and display output -->
+    <form method="POST" action="/results" enctype="multipart/form-data">
+
+        <div class="form-group custom-file mb-3">
+
+            <input type="file" name="file" class="custom-file-input" id="customFile"/>
+            <label class="custom-file-label" for="customFile">Choose File...</label>
+        </div>
+
+        <br>
+        <button type="submit" class="button" style="vertical-align:middle"><span>Upload</span></button>
+    </form>
+
+
+</div>
+
+<script>
+// Javascript to display filename after file is selected from: https://www.w3schools.com/bootstrap4/bootstrap_forms_custom.asp
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+{% endblock content %}

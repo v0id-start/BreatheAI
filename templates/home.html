@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Homepage of Breathe AI -->
+    <h1 class="text-center display-2">Welcome to Breathe AI</h1>
+
+    <img class="rounded mx-auto d-block" src="static/logo.png">
+
+    <hr>
+
+    <div class="container">
+
+        <h1 class="text-center">What is Breathe AI?</h1>
+        <p style="font-size:24px;" class="text-center">Breathe AI is a machine learning solution to identifying and diagnosing cases of community acquired pneumonia (CAP) by utilizing a Convolutional Neural Network to recognize patterns found in common Chest X-Rays.</p>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 class="text-center">Breathe AI's Mission</h1>
+        <p style="font-size:24px;" class="text-center">Breathe AI's mission is to provide an accessible, fast, and likely diagnosis of pneumonia. The COVID-19 pandemic has put immense pressure on all healthcare workers. The American Hospital Association projects that by late-January, 2021, 80% of all hospital beds in the US will be occupied, and states including California will be at 120% occupancy by February. In many rural communities, a seasoned doctor consultant is either unavailable or expensive. Breathe AI is a free online tool that works in the web and on mobile to provide insight to a chest x-ray.</p>
+        <div class="text-center">
+        <p5><i>https://www.aha.org/statistics/fast-facts-us-hospitals</i></p5>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h1 class="text-center">About Pneumonia</h1>
+
+        <p>Pneumonia is an infection found in the lungs that agitates and inflames alveoli (air pouches), causing them to fill with fluid or pus. This causes symptoms such as a cough, fever, chills and trouble breathing.</p>
+        <br>
+
+        <!-- Side by side images with captions of x-rays -->
+        <div class="well text-center">
+
+        <div class="row">
+      		<div class="col-md-6">
+            	<img style="width:300px;height:300px;" src="https://prod-images.static.radiopaedia.org/images/220869/76052f7902246ff862f52f5d3cd9cd_jumbo.jpg" alt="inn_logo">
+
+        	</div>
+
+        	<div class="col-md-6">
+          		<img style="width:300px;height:300px;" src="https://www.med-ed.virginia.edu/courses/rad/cxr/web%20images/rul-pneumonia-pa.jpg" alt="ccs_logo">
+        	</div>
+            <div class="col-md-6 font-italic">Healthy Chest X-Ray<br>
+                <p5><i>https://radiopaedia.org/cases/normal-chest-x-ray</i></p5>
+            </div>
+            <div class="col-md-6 font-italic">CAP Infected Chest X-Ray<br>
+            <p5><i>https://www.med-ed.virginia.edu/courses/rad/cxr/pathology3chest.html</i></p5>
+            </div>
+
+      	</div>
+
+        <br>
+        <br>
+
+            <!-- Quote div-->
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">"Pneumonia is a disease that often flies under the radar of not just the public but even the global health community. It kills more children under 5 years old every year than AIDS, malaria, and measles combined."</p>
+            <footer class="blockquote-footer">Mandy Moore, Activist/Actress</footer>
+        </blockquote>
+    </div>
+    <br>
+    <br>
+
+
+
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- About page, Explains Neural Networks & Breathe AI's training process -->
+    <h1 class="text-center display-4">About Convolutional Neural Networks & Machine Learning</h1>
+
+    <br>
+    <br>
+
+
+    <p style="font-size:24px;" class="text-left">In machine learning,
+        a neural network is a collection of neurons connected to loosely
+        model a human's brain. Neural networks are able to 'learn' by
+        adjusting weights and biases between layers of neurons during training
+        to alter the output.</p>
+
+    <img class="rounded mx-auto d-block" style="width:1300px; width:696px;" src="https://miro.medium.com/max/1569/1*vkQ0hXDaQv57sALXAJquxA.jpeg" alt="CNN Diagram"/>
+    <p5 class="text-center"><i>Source: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53</i></p5>
+    <br>
+    <br>
+    <br>
+
+
+    <p style="font-size:24px;" class="text-left">The input image is first flattened
+        converted into a multi-dimensional array of vectors that represent the color
+        value of each pixel in RGB. Convolutions are performed on the input to extract
+        high level details of the image that it can use to distinguish possible outputs.
+        After many convolutions, the output is flattened to provide an output. With
+        convolutional neural networks, this is usually an identification of an object within an image.</p>
+
+    <img class="rounded mx-auto d-block" style="width:1300px; width:696px;" src="https://miro.medium.com/max/2055/1*uAeANQIOQPqWZnnuH-VEyw.jpeg" alt="CNN Diagram"/>
+    <p5 class="text-center"><i>Source: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53</i></p5>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<h1 class="text-center display-4"><u>Breathe AI's Model</u></h1>
+
+    <br>
+    <br>
+
+
+    <h4>Breathe AI's convolutional neural network was trained on 5,840 images of labeled pneumonia-infected and healthy chest x-rays.</h4>
+
+    <br>
+    <br>
+        <div class="row">
+            <div class="col-md-6">
+                <img style="width:300px;height:300px;" src="https://prod-images.static.radiopaedia.org/images/220869/76052f7902246ff862f52f5d3cd9cd_jumbo.jpg" alt="inn_logo">
+            </div>
+
+            <div class="col-md-6">
+                <img style="width:300px;height:300px;" src="https://www.med-ed.virginia.edu/courses/rad/cxr/web%20images/rul-pneumonia-pa.jpg" alt="ccs_logo">
+            </div>
+            <div class="col-md-6 font-italic font-weight-bold">Healthy Chest X-Ray</div>
+            <div class="col-md-6 font-italic font-weight-bold">Pneumonia Infected Chest X-Ray</div>
+        </div>
+
+    <br>
+    <br>
+
+    <div class="text-center">
+    <img style="width:400px;height:800px;" src="static/figures/50_epochs.png" alt="Accuracy over time figure">
+    </div>
+    <p class="text-center"><i>Breathe AI Model's Accuracy over 50 epochs of training</i></p>
+
+    <br>
+    <br>
+{% endblock content %}

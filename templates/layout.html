@@ -1,0 +1,107 @@
+<!-- layout contains top navbar and sidebar, bootstrap reference, main.css reference. All other .html templates will extend layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet", type="text/css", href="{{ url_for('static', filename='main.css') }}">
+
+
+    {% if title %}
+        <title>Breathe AI - {{ title }}</title>
+    {% else %}
+        <title>Breathe AI</title>
+
+    {% endif %}
+</head>
+<body>
+
+    <!-- Site Navbar with links to all pages -->
+    <header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+      <a  class="navbar-brand mr-4" href="/">Breathe AI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/diagnose">Diagnose</a>
+          <a class="nav-item nav-link" href="/covid">COVID-19</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+          <a class="nav-item nav-link" href="/resources">Resources</a>
+        </div>
+
+        <div class="navbar-nav">
+
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<main role="main" class="container">
+
+  <div class="row">
+
+
+      <!-- Where content extends for other templates -->
+    <div class="col-md-8">
+      {% block content %}{% endblock %}
+    </div>
+
+
+      <!-- Sidebar from: https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog-->
+    <div class="col-md-4">
+      <div class="content-section">
+
+        <h3>Recent Updates</h3>
+        <p class='text-muted'>
+          <ul class="list-group">
+
+          <li class="list-group-item list-group-item-light"><b>News</b>
+                <ul>
+                    <li><a href="https://news.northwestern.edu/stories/2021/01/why-covid-19-pneumonia-worse-than-typical-pneumonia/" target="_blank">Why COVID-19 pneumonia lasts longer, causes more damage than typical pneumonia</a></li>
+                    <br>
+                    <li><a href="https://medicalxpress.com/news/2019-08-poor-pneumonia-outcomes-tied-overuse.html" target="_blank">Poor pneumonia outcomes tied to overuse of broad-spectrum antibiotics</a></li>
+                </ul>
+            </li>
+
+          <!-- 2nd Part of Sidebar -->
+          <li class="list-group-item list-group-item-light"><b>Recent Breathe AI Updates</b>
+                <ul>
+                    <li>Tuned CNN for higher accuracy</li>
+                    <li>Optimized diagnosis time</li>
+                    <li>Added augmented training data to combat overfitting</li>
+                </ul></li>
+          </ul>
+
+          <!-- <li class="list-group-item list-group-item-light"><a href="https://twitter.com/BreatheAIHelp" target="_blank">Report a Bug</a></li> -->
+
+
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</main>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
